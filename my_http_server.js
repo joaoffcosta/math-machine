@@ -1,4 +1,5 @@
 var express = require('express');
+var machine = require('./math-machine.js').machine
 
 var app = express();
 
@@ -9,6 +10,20 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static(__dirname + '/public'));
+
+// handle API
+app.get("/*", function (req, res, next) {
+  // remove first and last '/'
+  var formula = req.url.replace(/^\//, "").replace(/\/$/, "")
+  var result  = machine(formula); 
+
+  if (result) {
+    res.send(result.toString());
+  } else {
+    next();
+  }
+});
+
 app.listen(3000);
 
 console.log('Listening on port 3000');
