@@ -1,9 +1,50 @@
 <html>
   <head>
     <title>Math Machine</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
-    This is a Math Machine.
+    <div id="top">Math Machine (beta)</div>
+    <div class="section">
+      <span class="title">Math Machine? What is Math Machine?</span>
+      <br>
+      Math Machine is a web service for doing <a href="http://en.wikipedia.org/wiki/Operation_(mathematics)" target="_blank">simple math operations</a> using <a href="http://en.wikipedia.org/wiki/Clean_URL" target="_blank">clean urls</a>.
+    </div>
+    <div class="section">
+      <span class="title">And how do I use this thing?</span>
+      <br>
+      All you have to do is prefix the math operator to its arguments. Like this:
+      <div class="code">/add/2/1</div>
+    </div>
+    <div class="section">
+      <span class="title">Is there a list of operations?</span>
+        <div class="code">
+          -6 ................. /neg/6<br>
+          |9| ................ /abs/9<br>
+          2 + 1 .............. /add/2/1<br>
+          9 - 3 .............. /sub/9/3<br>
+          5 * 7 .............. /mul/5/7<br>
+          8 / 4 .............. /div/8/4<br>
+          2 ^ 3 .............. /pow/2/3<br>
+          sqrt(9,2) .......... /sqrt/9/2<br>
+        </div>
+    </div>
+    <div class="section">
+      <span class="title">Ok, cool, but can I combine them?</span>
+      <br>
+      Of course! I wouldn't make it any other way.
+    </div>
+    <div class="section">
+      <span class="title">Yeah, sorry to dissapoint you, but I found a bug...</span>
+      <br>
+      Oh sorry, that's unfortunate. Can you please open an issue on <a href="https://github.com/joaoffcosta/math-machine/">github</a> with the operation that resulted in that bug? Thanks!
+    </div>
+    <div class="section">
+      <span class="title">One last question: why would I need such a thing?</span>
+      <br>
+      Well, don't take me wrong, but that's kind of up to you. I'm just playing around with <a href="http://nodejs.org/" target="_blank">Node.js</a>.
+    </div>
+    <div id="bottom"><a href="https://github.com/joaoffcosta/math-machine/">view on github</a></div>
   </body>
 </html>
 

@@ -1,0 +1,59 @@
+/*
+  This was the theme inspiration:
+  http://www.monokai.nl/blog/2006/07/15/textmate-color-theme/
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+
+body {
+  width: 450px;
+  margin: 0px auto;
+  background: #272822;
+  font-family: 'Droid Sans Mono', sans-serif;
+  font-size: 14px;
+  color: #75715E;
+  line-height: 200%;
+}
+
+a:link    { color: #89BDFF; text-decoration: none;      }
+a:visited { color: #89BDFF; text-decoration: none;      }
+a:hover   { color: #89BDFF; text-decoration: underline; }
+a:active  { color: #89BDFF; text-decoration: none;      }
+
+#top {
+  text-align: center;
+  color: #ffffff;
+  background: #595959;
+  padding-left: 10px;
+  margin-bottom: 0.5em;
+}
+
+.section {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.section .title {
+  color: #A6E22A;
+  font-size: 14px;
+}
+
+.code {
+  color: #E6DB74;
+  padding: 2px 6px;
+  background: #383830;
+  border: solid 1px #A6E22E;
+  margin-top: 1em;
+}
+
+#bottom {
+  text-align: right;
+  background: #595959;
+  padding-right: 10px;
+  margin-bottom: 0.5em;
+}
+
+#bottom a:link    { color: #F92672; text-decoration: none;      }
+#bottom a:visited { color: #F92672; text-decoration: none;      }
+#bottom a:hover   { color: #F92672; text-decoration: underline; }
+#bottom a:active  { color: #F92672; text-decoration: none;      }
