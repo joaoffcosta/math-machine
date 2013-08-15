@@ -6,7 +6,7 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
 
 body {
-  width: 450px;
+  max-width: 450px; 
   margin: 0px auto;
   background: #272822;
   font-family: 'Droid Sans Mono', sans-serif;
