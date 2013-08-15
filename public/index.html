@@ -1,8 +1,18 @@
 <html>
+
   <head>
     <title>Math Machine</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.operation').each(function(index) {
+          $(this).attr('href', $(this).text());
+        });
+      });
+    </script>
   </head>
+
   <body>
     <div id="top">Math Machine (beta)</div>
     <div class="section">
@@ -14,19 +24,19 @@
       <span class="title">And how do I use this thing?</span>
       <br>
       All you have to do is prefix the math operator to its arguments. Like this:
-      <div class="code">/add/2/1</div>
+      <div class="code"><a class="operation">/add/2/1</a></div>
     </div>
     <div class="section">
       <span class="title">Is there a list of operations?</span>
         <div class="code">
-          -6 ................. /neg/6<br>
-          |9| ................ /abs/9<br>
-          2 + 1 .............. /add/2/1<br>
-          9 - 3 .............. /sub/9/3<br>
-          5 * 7 .............. /mul/5/7<br>
-          8 / 4 .............. /div/8/4<br>
-          2 ^ 3 .............. /pow/2/3<br>
-          sqrt(9,2) .......... /sqrt/9/2<br>
+          -6 ................. <a class="operation">/neg/6</a><br>
+          |9| ................ <a class="operation">/abs/9</a><br>
+          2 + 1 .............. <a class="operation">/add/2/1</a><br>
+          9 - 3 .............. <a class="operation">/sub/9/3</a><br>
+          5 * 7 .............. <a class="operation">/mul/5/7</a><br>
+          8 / 4 .............. <a class="operation">/div/8/4</a><br>
+          2 ^ 3 .............. <a class="operation">/pow/2/3</a><br>
+          sqrt(9,2) .......... <a class="operation">/sqrt/9/2</a><br>
         </div>
     </div>
     <div class="section">
@@ -47,5 +57,3 @@
     <div id="bottom"><a href="https://github.com/joaoffcosta/math-machine/">view on github</a></div>
   </body>
 </html>
-
-
