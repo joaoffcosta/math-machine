@@ -1,4 +1,6 @@
 var machine = require('../math-machine.js')
+var numTests = 0;
+var numFails = 0;
 
 function assert(formula, expected) {
   var result = machine.parse(formula)
@@ -10,6 +12,18 @@ function assert(formula, expected) {
   } else {
     console.log("[ERROR]  f(" + formula + ") = " + resultStr + " (expected " + expectedStr + ")");  
     console.log("");
+    numFails++;
+  }
+  numTests++;
+}
+
+function resume() {
+  console.log();
+  console.log("---------------------------------------------------");
+  if (numFails <= 0) {
+    console.log("All " + numTests + " tests executed successfully.");
+  } else {
+    console.log("ERROR: " + numFails + " (out of " + numTests + ") failed.");
   }
 }
 
@@ -48,3 +62,5 @@ assert("div/8/2/2/2", 1);
 
 assert("div/8/2/add/2/2", 1);
 assert("add/8/2/mul/3/3", 19);
+
+resume();
