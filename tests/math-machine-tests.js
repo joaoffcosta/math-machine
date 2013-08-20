@@ -40,6 +40,11 @@ assert("neg/neg/neg/3", -3);
 assert("abs/5", 5);
 assert("abs/neg/7", 7);
 
+assert("fact/neg/1", 1);
+assert("fact/1", 1);
+assert("fact/2", 2);
+assert("fact/10", 3628800);
+
 assert("pow/3/2", 9);
 assert("pow/neg/3/2", 9);
 assert("pow/pow/2/2/pow/2/2", 256);
