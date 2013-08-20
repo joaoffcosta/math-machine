@@ -1,7 +1,7 @@
-var machine = require('./math-machine.js').machine
+var machine = require('../math-machine.js')
 
 function assert(formula, expected) {
-  var result = machine(formula)
+  var result = machine.parse(formula)
 
   var expectedStr = expected == null ? "" : expected.toString();
   var resultStr   = result   == null ? "" : result.toString();
