@@ -48,19 +48,24 @@ assert("sqrt/pow/3/2/2", 3);
 assert("pow/sqrt/9/2/2", 9);
 
 assert("add/1/2", 3);
-assert("add/1/2/3", 6);
-assert("add/1/2/3/4", 10);
+assert("add/1/2/3/4", [3,3,4]);
 assert("sub/1/2", -1);
-assert("sub/1/2/3", -4);
-assert("sub/1/2/3/4", -8);
+assert("sub/1/2/3/4", [-1,3,4]);
 assert("mul/2/3", 6);
-assert("mul/2/3/4", 24);
-assert("mul/2/3/4/5", 120);
+assert("mul/2/3/4/5", [6,4,5]);
 assert("div/9/3", 3);
-assert("div/4/2/2", 1);
-assert("div/8/2/2/2", 1);
+assert("div/8/2/2/2", [4,2,2]);
 
-assert("div/8/2/add/2/2", 1);
-assert("add/8/2/mul/3/3", 19);
+assert("addn/1/2/3", 6);
+assert("addn/1/2/3/4", 10);
+assert("subn/1/2/3", -4);
+assert("subn/1/2/3/4", -8);
+assert("muln/2/3/4", 24);
+assert("muln/2/3/4/5", 120);
+assert("divn/4/2/2", 1);
+assert("divn/8/2/2/2", 1);
+
+assert("divn/8/2/add/2/2", 1);
+assert("addn/8/2/mul/3/3", 19);
 
 resume();
