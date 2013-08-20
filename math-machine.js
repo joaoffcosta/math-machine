@@ -13,8 +13,9 @@ function applyNaryOperation(numbers, operation) {
 op = { }
 
 // unary
-op.neg = function(num) { return -num; }
-op.abs = function(num) { return Math.abs(num); }
+op.neg  = function(num) { return -num; }
+op.abs  = function(num) { return Math.abs(num); }
+op.fact = function(num) { return num <= 1 ? 1 : num * arguments.callee(num - 1) }
 
 // binary
 op.add  = function(num1, num2) { return num1 + num2; }
@@ -49,8 +50,9 @@ function parse(operation) {
 
   // unary operators
   switch (first) {
-    case "neg":  return value(op.neg(args[0]), args.slice(1));
-    case "abs":  return value(op.abs(args[0]), args.slice(1));
+    case "neg":  return value(op.neg( args[0]), args.slice(1));
+    case "abs":  return value(op.abs( args[0]), args.slice(1));
+    case "fact": return value(op.fact(args[0]), args.slice(1));
   }
 
   // binary operators
