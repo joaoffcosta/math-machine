@@ -17,14 +17,18 @@ op.neg = function(num) { return -num; }
 op.abs = function(num) { return Math.abs(num); }
 
 // binary
+op.add  = function(num1, num2) { return num1 + num2; }
+op.sub  = function(num1, num2) { return num1 - num2; }
+op.mul  = function(num1, num2) { return num1 * num2; }
+op.div  = function(num1, num2) { return num1 / num2; }
 op.pow  = function(base, exp)  { return Math.pow(base, exp); }
 op.sqrt = function(rad, deg)   { return Math.sqrt(rad, deg); }
 
 // n-ary
-op.add = function(numbers) { return applyNaryOperation(numbers, function(n1,n2){return n1+n2;}); }
-op.sub = function(numbers) { return applyNaryOperation(numbers, function(n1,n2){return n1-n2;}); }
-op.mul = function(numbers) { return applyNaryOperation(numbers, function(n1,n2){return n1*n2;}); }
-op.div = function(numbers) { return applyNaryOperation(numbers, function(n1,n2){return n1/n2;}); }
+op.addn = function(numbers) { return applyNaryOperation(numbers, op.add); }
+op.subn = function(numbers) { return applyNaryOperation(numbers, op.sub); }
+op.muln = function(numbers) { return applyNaryOperation(numbers, op.mul); }
+op.divn = function(numbers) { return applyNaryOperation(numbers, op.div); }
 
 // operation parser
 function parse(operation) {
@@ -51,16 +55,20 @@ function parse(operation) {
 
   // binary operators
   switch (first) {
+    case "add":  return value(op.add( args[0], args[1]), args.slice(2));
+    case "sub":  return value(op.sub( args[0], args[1]), args.slice(2));
+    case "mul":  return value(op.mul( args[0], args[1]), args.slice(2));
+    case "div":  return value(op.div( args[0], args[1]), args.slice(2));
     case "pow":  return value(op.pow( args[0], args[1]), args.slice(2));
     case "sqrt": return value(op.sqrt(args[0], args[1]), args.slice(2));
   }
 
   // n-ary operators
   switch (first) {
-    case "add": return op.add(args);
-    case "sub": return op.sub(args);
-    case "mul": return op.mul(args);
-    case "div": return op.div(args);
+    case "addn": return op.addn(args);
+    case "subn": return op.subn(args);
+    case "muln": return op.muln(args);
+    case "divn": return op.divn(args);
   }
   
   return null;
