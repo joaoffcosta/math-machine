@@ -2,11 +2,10 @@ function value(value, rest) {
   return rest == null ? value : [value].concat(rest);
 }
 
-function applyNaryOperation(numbers, operation) {
+function nAry(numbers, op) {
   var value = numbers[0];
-  for (var i = 1; i < numbers.length; i++) {
-    value = operation(value, numbers[i]);
-  }
+  for (var i = 1; i < numbers.length; i++)
+    value = op(value, numbers[i]);
   return value;
 }
 
@@ -26,10 +25,10 @@ op.pow  = function(base, exp)  { return Math.pow(base, exp); }
 op.sqrt = function(rad, deg)   { return Math.sqrt(rad, deg); }
 
 // n-ary
-op.addn = function(numbers) { return applyNaryOperation(numbers, op.add); }
-op.subn = function(numbers) { return applyNaryOperation(numbers, op.sub); }
-op.muln = function(numbers) { return applyNaryOperation(numbers, op.mul); }
-op.divn = function(numbers) { return applyNaryOperation(numbers, op.div); }
+op.addn = function(numbers) { return nAry(numbers, op.add); }
+op.subn = function(numbers) { return nAry(numbers, op.sub); }
+op.muln = function(numbers) { return nAry(numbers, op.mul); }
+op.divn = function(numbers) { return nAry(numbers, op.div); }
 
 // operation parser
 function parse(operation) {
