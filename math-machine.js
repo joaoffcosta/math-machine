@@ -26,7 +26,8 @@ op.sub = function(numbers) { return applyNaryOperation(numbers, function(n1,n2){
 op.mul = function(numbers) { return applyNaryOperation(numbers, function(n1,n2){return n1*n2;}); }
 op.div = function(numbers) { return applyNaryOperation(numbers, function(n1,n2){return n1/n2;}); }
 
-function machine(operation) {
+// operation parser
+function parse(operation) {
   if (operation == "")
     return null;
 
@@ -37,10 +38,10 @@ function machine(operation) {
 
   // is this a value?
   if (first.match(/^\d+$/)) {
-    return value(parseInt(first), machine(rest));
+    return value(parseInt(first), parse(rest));
   }
 
-  var args = [].concat(machine(rest));
+  var args = [].concat(parse(rest));
 
   // unary operators
   switch (first) {
@@ -65,4 +66,4 @@ function machine(operation) {
   return null;
 }
 
-exports.machine = machine;
+exports.parse = parse;
