@@ -3,14 +3,14 @@ var numTests = 0;
 var numFails = 0;
 
 function assert(formula, expected) {
-  var result = machine.parse(formula)
+  var result = machine.parse(formula);
 
   var expectedStr = expected == null ? "" : expected.toString();
   var resultStr   = result   == null ? "" : result.toString();
   if (resultStr == expectedStr) {
-    console.log("[OK]     f(" + formula + ") = " + resultStr);  
+    console.log("[\u001b[32mOK\u001b[0m]     f(" + formula + ") = " + resultStr);  
   } else {
-    console.log("[ERROR]  f(" + formula + ") = " + resultStr + " (expected " + expectedStr + ")");  
+    console.log("[\u001b[31mERROR\u001b[0m]  f(" + formula + ") = " + resultStr + " (expected " + expectedStr + ")");  
     console.log("");
     numFails++;
   }
@@ -21,9 +21,9 @@ function resume() {
   console.log();
   console.log("---------------------------------------------------");
   if (numFails <= 0) {
-    console.log("All " + numTests + " tests executed successfully.");
+    console.log("\u001b[32mAll " + numTests + " tests executed successfully.\u001b[0m");
   } else {
-    console.log("ERROR: " + numFails + " (out of " + numTests + ") failed.");
+    console.log("\u001b[31mERROR: " + numFails + " (out of " + numTests + ") failed.\u001b[0m");
   }
 }
 
