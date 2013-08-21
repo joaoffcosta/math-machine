@@ -1,5 +1,5 @@
 var express = require('express');
-var machine = require('./math-machine.js')
+var machine = require('./machine.js');
 
 var app = express();
 
@@ -25,6 +25,7 @@ app.get("/*", function (req, res, next) {
 });
 
 var port = process.env.PORT || 3000;
+
 app.listen(port, function() {
   console.log("Listening on port " + port);
 });
