@@ -1,4 +1,4 @@
-var machine = require('../math-machine.js')
+var machine = require('../machine.js')
 var numTests = 0;
 var numFails = 0;
 
