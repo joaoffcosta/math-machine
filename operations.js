@@ -14,7 +14,6 @@ function nAry(numbers, op) {
 
 // unary
 function neg(num)  { return -num; }
-function abs(num)  { return Math.abs(num); }
 function fact(num) { return num <= 1 ? 1 : num * arguments.callee(num - 1) }
 
 // binary
@@ -22,8 +21,6 @@ function add(num1, num2) { return num1 + num2; }
 function sub(num1, num2) { return num1 - num2; }
 function mul(num1, num2) { return num1 * num2; }
 function div(num1, num2) { return num1 / num2; }
-function pow(base, exp)  { return Math.pow(base, exp); }
-function sqrt(rad, deg)  { return Math.sqrt(rad, deg); }
 
 // n-ary
 function addn(numbers) { return nAry(numbers, add); }
@@ -34,15 +31,15 @@ function divn(numbers) { return nAry(numbers, div); }
 
 exports.ops = {
   neg:  opify(1, neg),
-  abs:  opify(1, abs),
+  abs:  opify(1, Math.abs),
   fact: opify(1, fact),
   
   add:  opify(2, add),
   sub:  opify(2, sub),
   mul:  opify(2, mul),
   div:  opify(2, div),
-  pow:  opify(2, pow),
-  sqrt: opify(2, sqrt),
+  pow:  opify(2, Math.pow),
+  sqrt: opify(2, Math.sqrt),
   
   addn: opify(-1, addn),
   subn: opify(-1, subn),
