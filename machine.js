@@ -24,14 +24,14 @@ function parse(operation) {
   operands = operation.split("/");
   values   = [];
   
-  var operand = undefined;
+  var operand;
   while (operand = operands.pop()) {
     console.log("[" + values + "] << " + operand);
 
-    if (operand.match(/^\d+$/)) {
+    if (operand.match(/^\d+$/) != undefined) {
       values.push(parseInt(operand));
 
-    } else if (ops[operand]) {
+    } else if (ops[operand] != undefined) {
       var value = callOp(ops[operand]);
       values.push(value);
 
