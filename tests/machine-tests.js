@@ -73,4 +73,7 @@ assert("divn/8/2/2/2", 1);
 assert("divn/8/2/add/2/2", 1);
 assert("addn/8/2/mul/3/3", 19);
 
+assert("muln/addn/neg/1/1/end/10", 0);
+assert("divn/8/2/end/1", [4,1]);
+
 resume();
